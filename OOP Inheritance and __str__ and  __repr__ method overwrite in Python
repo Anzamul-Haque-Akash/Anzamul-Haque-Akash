@@ -34,6 +34,8 @@ for person in person_list:
         print(person.get_name())
 print(person_list[0].get_summary())
 
+
+
 class Student(Person):
     def __init__(self, parson_name: str, date_of_birth: str, smstr: int):
         super().__init__(parson_name, date_of_birth)
@@ -45,9 +47,16 @@ class Student(Person):
     def get_sammary(self):
         return f"Name : {self.get_name()}, DOB : {self.get_birth()}, Smstr : {self.__smstr}"
 
+    def __str__(self):
+       return self.get_sammary()
+
+    def __repr__(self):
+       return self.get_sammary()
+
 
 student = Student("Akash Talukder", "00/00/00", 8)
 print(student.get_sammary())
 student.set_name("Anzamul Haque Akash Talukder")
 student.set_smstr("9")
 print(student.get_sammary())
+print(student)

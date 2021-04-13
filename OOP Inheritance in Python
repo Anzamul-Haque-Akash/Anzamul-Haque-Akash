@@ -23,7 +23,6 @@ class Person:
     def get_birth(self):
         return self.__birth
 
-
 person_list = []
 person_list.append(Person("Anzamul Haque Akash1", "08/10/1998", 5.6))
 person_list.append(Person("Anzamul Haque Akash2", "08/10/1998", 5.7))
@@ -40,9 +39,15 @@ class Student(Person):
         super().__init__(parson_name, date_of_birth)
         self.__smstr = smstr
 
+    def set_smstr(self, smstr):
+        self.__smstr = smstr
+
     def get_sammary(self):
         return f"Name : {self.get_name()}, DOB : {self.get_birth()}, Smstr : {self.__smstr}"
 
 
 student = Student("Akash Talukder", "00/00/00", 8)
+print(student.get_sammary())
+student.set_name("Anzamul Haque Akash Talukder")
+student.set_smstr("9")
 print(student.get_sammary())
